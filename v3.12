@@ -1,0 +1,13 @@
+## v3.12 - Verify that session ids stored in cookies have their path set to an appropriately restrictive value for the application, and authentication session tokens additionally set the “HttpOnly” and “secure” attributes
+
+### Why is this required?
+
+The purpose of the HTTPOnly setting in a session token is to tell the browser that a particular cookie is only to be accessed by the server.  This setting will protect the cookie from malicious JavaScript, which could either alter the cookie, or swipe the session id from the cookie and forward it to a malicious user who can then use the session id to hijack the session.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that handle sessions.
+
+### Guidelines for developers
+
+Third-party session managers must be used.

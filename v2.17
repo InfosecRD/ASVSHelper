@@ -1,0 +1,13 @@
+## v2.17 - Verify that the forgotten password function and other recovery paths do not reveal the current password and that the new password is not sent in clear text to the user.
+
+### Why is this required?
+
+The current password must never be stored in cleartext and must only be stored as an irreversible hash, therefore it should be impossible to reveal the current password to the user.  Any passwords, whether current or new, sent as cleartext can potentially be intercepted by a malicious user.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that include a forgotten password function.
+
+### Guidelines for developers
+
+Password resets should be set up so that password resets are randomly generated and e-mailed to the user, using the e-mail address already existing on the account.  Ideally, the password reset should exist in the form of a temporary link that will direct the user to create a new password.

@@ -1,0 +1,17 @@
+## v2.13 - Verify that account passwords are one way hashed with a salt, and there is sufficient work factor to defeat brute force and password hash recovery attacks.
+
+### Why is this required?
+
+All databases, no matter how secure, can potentially be compromised, and if the database containing user passwords is compromised, then the work required to restore people's accounts would be tremendous, since each user would have to be re-authenticated.  For this reason, passwords are stored with a secure hash function.  This way, a malicious user obtaining the database table in which the passwords are stored is still not able to obtain any user passwords directly.
+
+However, one potential weakness of this method is that a malicious user can still compare password hashes with each other and see if any match.  The reason they would do this is because if any hashes match, then that would mean the passwords must match.  If passwords match, then that implies that the passwords are also relatively easy to guess.  For this reason, a salt (a random number) is added to the password before it is hashed, so two different users using identical passwords will have different hashed passwords, and a malicious user will not be able to guess any passwords that way.
+
+It is still theoretically possible for a malicious user to brute-force guess the passwords, but if the password rules and the hashing function are sufficiently strong, it would take a prohibitively long time for a malicious user to extract any passwords from the database.
+
+### Applicability (Level 2)
+
+This objective applies to all apps that store passwords.
+
+### Guidelines for developers
+
+Password hashing must use SHA-256 at a minimum.  Salting methods must be cryptographically secure and vetted, such as bcrypt.

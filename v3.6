@@ -1,0 +1,15 @@
+## v3.6 - Verify that the session id is never disclosed in URLs, error messages, or logs. This includes verifying that the application does not support URL rewriting of session cookies.
+
+### Why is this required?
+
+It is common for malicious users to intercept URL information of requests, because very often they can find useful information in the URL, particularly if a web app uses GET requests.  If session information is sent via GET request, then it is availble unencrypted to any malicious user.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that use sessions.
+
+### Guidelines for developers
+
+Never use GET requests to communicate session information, since GET requests store the variables in a URL that is easy for a malicious man-in-the-middle to intercept.
+
+Error messages must never be sent to the front end.  Errors must trigger a generic message to the user.  404 errors should redirect the user to another page.  All directories must have a landing page.

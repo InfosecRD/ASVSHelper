@@ -1,0 +1,13 @@
+## v4.5 - Verify that directory browsing is disabled unless deliberately desired. Additionally, applications should not allow discovery or disclosure of file or directory metadata, such as Thumbs.db, .DS_Store, .git or .svn folders.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Ensure that all directories either have a default page or will redirect the user to a default page.  Ensure all metadata files are inaccessible and will result in a browser redirect.

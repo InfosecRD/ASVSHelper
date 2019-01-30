@@ -1,0 +1,13 @@
+## v4.4 - Verify that access to sensitive records is protected, such that only authorized objects or data is accessible to each user (for example, protect against users tampering with a parameter to see or alter another user's account).
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+User IDs must never be sent in a URL.  Users must not be able to change user id.  Session information must be tied to a specific account.  Any personal information must be checked with the session id before being displayed.

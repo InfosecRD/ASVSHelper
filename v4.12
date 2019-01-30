@@ -1,0 +1,13 @@
+## v4.12 - Verify that all access control decisions can be logged and all failed decisions are logged.
+
+### Why is this required?
+
+Logging of access control decisions, particularly those of failed login attempts, is essential for being able to perform audits after a malicious user has attempted to access the system, particularly if the malicious user is attempting brute-force attacks.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Implement logging of all access control decisions.  Enure that all user input included in log files is sanitized.

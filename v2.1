@@ -1,0 +1,15 @@
+## v2.1 - Verify all pages and resources require authentication except those specifically intended to be public (Principle of complete mediation).
+
+### Why is this required?
+
+Each page must individually authenticate the user by checking for an active session.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that include non-public pages.  This objective will not apply to pages that are intended to be publicly accessible unless they also include non-public pages.  Any customer information, financial information, or other sensitive information must be considered non-public.
+
+### Guidelines for developers
+
+Each non-public page must authenticate whenever it is accessed and if the validation fails must redirect the user to a login or otherwise public page.  Pages containing sensitive information must never be stored as an HTML file and must instead be stored as JSP, PHP, or other similar server-side scripts that authenticate before sending information to the client.  Generating HTML real-time using server-side scripting languages such as Java is also acceptable.
+
+The development team and/or system architect must also identify which pages are to be considered public and which are to be considered non-public.

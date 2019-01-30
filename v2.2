@@ -1,0 +1,13 @@
+## v2.2 - Verify that forms containing credentials are not filled in by the application. Pre-filling by the application implies that credentials are stored in plaintext or a reversible format, which is explicitly prohibited.
+
+### Why is this required?
+
+Auto-complete is a useful tool but has security disadvantages that make it unsuitable for storing user credentials.  Auto-complete forms store information in plaintext, so if a user's computer is compromised, their credentials would be exposed to an attacker.
+
+### Applicability (Level 1)
+
+This objective applies to all pages on which a user would input credentials or other sensitive personal information (i.e. credit card number).
+
+### Guidelines for developers
+
+Ensure that autocomplete is disabled on the browser.  This can be done by setting `autocomplete="off"` in the form input field.  This should be set, at a minimum, on fields containing passwords, e-mail addresses, phone numbers, and credit card information.  Fields containing non-sensitive information may use autocomplete, and it will be up to the development team and/or system architect to decide which fields are to be considered non-sensitive.

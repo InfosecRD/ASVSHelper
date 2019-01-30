@@ -1,0 +1,11 @@
+## v5.23 - For auto-escaping template technology, if UI escaping is disabled, ensure that HTML sanitization is enabled instead.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

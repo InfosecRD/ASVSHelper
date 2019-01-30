@@ -1,0 +1,13 @@
+## v3.7 - Verify that all successful authentication and re-authentication generates a new session and session id.
+
+### Why is this required?
+
+Generating new session IDs will help prevent a type of attack called "session fixation" in which a malicious user hijacks a valid session.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that handle user sessions.
+
+### Guidelines for developers
+
+Session information should be handled by third-party authentication services.

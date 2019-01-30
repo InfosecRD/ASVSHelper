@@ -1,0 +1,15 @@
+## v5.10 - Verify that all SQL queries, HQL, OSQL, NOSQL and stored procedures, calling of stored procedures are protected by the use of prepared statements or query parameterization, and thus not susceptible to SQL injection
+
+### Why is this required?
+
+SQL injection is still a common way for malicious users to attack a web service.  A SQL injection attack occurs when a malicious user is able to provide input that is interpreted by the server as instructions to the database.
+
+![xkcd](https://imgs.xkcd.com/comics/exploits_of_a_mom.png)
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Always use prepared statements and parameterization for SQL queries.  Always sanitize any user input that will be used in a SQL query.

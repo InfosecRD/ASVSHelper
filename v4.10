@@ -1,0 +1,13 @@
+## v4.10 - Verify that all user and data attributes and policy information used by access controls cannot be manipulated by end users unless specifically authorized.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Front-end access control rules should never be stored on the client side, because those rules are easy for a malicious user to alter.  Access controls must always be validated on the server side before being accepted.

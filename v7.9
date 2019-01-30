@@ -1,0 +1,15 @@
+## v7.9 - Verify that there is an explicit policy for how cryptographic keys are managed (e.g., generated, distributed, revoked, and expired). Verify that this key lifecycle is properly enforced.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Keys must never be stored in code or in .properties files that will be stored with code.  Keys must be stored in a secured vault.
+
+A key rotation policy must be clearly established.

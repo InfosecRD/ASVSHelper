@@ -1,0 +1,13 @@
+## v5.21 - Verify that unstructured data is sanitized to enforce generic safety measures such as allowed characters and length, and characters potentially harmful in given context should be escaped (e.g. natural names with Unicode or apostrophes, such as ねこ or O'Hara)
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Only accept foreign characters if necessary -- US/Canada-based apps should not accept foreign characters.  Escape all special or foreign characters.

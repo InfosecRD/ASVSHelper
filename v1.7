@@ -1,0 +1,13 @@
+## v1.7 - Verify all security controls (including libraries that call external security services) have a centralized implementation.
+
+### Why is this required?
+
+This requirement means that there must be a "one-stop-shop" for establishing and controlling security rules.  If security rules are established in several different locations, then it can be difficult if not impossible to maintain proper configuration control, and there may be conflicting security policies in place.  There needs to be one central repository in which all security rules are stored and all locations, both server- and client-side, that apply security policies must draw the rules from that location.
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+The implementation method should be identified early in the development process and used consistenly throughout the life cycle.

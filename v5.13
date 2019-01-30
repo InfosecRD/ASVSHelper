@@ -1,0 +1,13 @@
+## v5.13 - Verify that the application is not susceptible to Remote File Inclusion (RFI) or Local File Inclusion (LFI) when content is used that is a path to a file.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps that dynamically reference external files or allow users to upload files.
+
+### Guidelines for developers
+
+Sanitize all GET/POST/PUT parameters to ensure that inputs cannot link to untrusted directories or crawl through directories.  If possible, only permit whitelisted files to be included.

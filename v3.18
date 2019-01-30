@@ -1,0 +1,13 @@
+## v3.18 - Verify the user is prompted with the option to terminate all other active sessions after a successful change password process.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Ensure that this option is made available for users and that the description of its function is easy for users to understand.

@@ -1,0 +1,13 @@
+## v3.5 - Verify that all pages that require authentication have easy and visible access to logout functionality.
+
+### Why is this required?
+
+If the logout functionality of a page is not immediately available, then users might decide not to bother with it and instead simply close a browser window.  This can lead to difficulty with session management as it can cause sessions to live longer than necessary.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that have login functionality.
+
+### Guidelines for developers
+
+A good way to implement this is to include a standard navigation bar at the top of the screen that has clearly visible logout functionality.  Keep in mind accessibility when desgining the look of the logout, and avoid burying the logout functionality within a drop-down menu.

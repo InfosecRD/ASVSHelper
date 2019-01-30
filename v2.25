@@ -1,0 +1,13 @@
+## v2.25 - Verify that the system can be configured to disallow the use of a configurable number of previous passwords.
+
+### Why is this required?
+
+When a password change is required, the user must not be able to use a recently-used password.  One of the main reasons for rotating passwords and preventing previous ones from being used is in case a database is breached and passwords are compromised.  This breach would not even have to occur within the same organization, because most users tend to use the same passwords across multiple sites.  If users are allowed to re-use older passwords, then it is more likely that a password that they may have used on a different site that is breached will also be their password for your site.
+
+### Applicability (Level 2)
+
+This objective applies to all apps that require user logins.
+
+### Guidelines for developers
+
+Third-party authentication services must be used.  Developers will need to coordinate with third-party to determine password policies.

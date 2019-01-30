@@ -1,0 +1,17 @@
+## v2.18 - Verify that information enumeration is not possible via login, password reset, or forgot account functionality.
+
+### Why is this required?
+
+Information enumeration is when a malicious user is able to glean information from a database by exploiting the responses they receive from the app.  A common example is when a malicious user is able to determine that a username exists in a database if they receive a different error message depending on whether the username exists but the password does not match or whether the username does not exist in the database.
+
+The ability to learn whether a username or e-mail address exists in a database is useful information to a malicious user, as it allows them to more eaily brute-force guess passwords because they can fine tune their attack.  By obscuring this information from users, it makes it more difficult and time-consuming for them to break their way into an account.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that require a login.
+
+### Guidelines for developers
+
+When a user makes a failed attempt to log in, the message returned to them must be the same regardless of whether their username or password was typed incorrectly.  For example, an error message could read `The username and password you entered do not match` and that is the only information the user sees.  The information sent to the log file could contain more detailed information, but that does not get sent to the user.
+
+It is also possible to enumerate accounts via password reset functions.  For example, a malicious user might use the "forgot password" button and check whether the response received identifies whether the username or e-mail address exists within the database.  This response must also be generic, and say something similar to `If this username exists within our database, an e-mail has been sent to the address associated with the account`, thereby not revealing information to the user.

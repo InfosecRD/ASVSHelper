@@ -1,0 +1,13 @@
+## v5.19 - Verify that all input data is validated, not only HTML form fields but all sources of input such as REST calls, query parameters, HTTP headers, cookies, batch files, RSS feeds, etc; using positive validation (whitelisting), then lesser forms of validation such as greylisting (eliminating known bad strings), or rejecting bad inputs (blacklisting).
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Treat all user input as malicious: validate for length and content, escape any special characters, and parameterize any queries.  Create architecture that minimizes need for direct user input.  Any input coming from third-party sources must only be permitted from whitelisted sources.

@@ -1,0 +1,13 @@
+## v2.21 - Verify that all authentication credentials for accessing services external to the application are encrypted and stored in a protected location.
+
+### Why is this required?
+
+It is surprisingly common for large-scale web services to be compromised because of credentials that were carelessly stored in a publicly-accessible or easily-breached location.  Even with IP whitelisting, it is possible to exploit authentication breaches.
+
+### Applicability (Level 2)
+
+This objective applies to all apps that use third-party services requiring a credential.
+
+### Guidelines for developers
+
+Authentication credentials must never be stored in code.  This includes `.properites` files that are stored in publicly accessible locations such as GitHub, even if the code in GitHub is password protected.  Authentication credentials should be stored in a vault that has tightly controlled access requirements.

@@ -1,0 +1,13 @@
+## v2.20 - Verify that anti-automation is in place to prevent breached credential testing, brute forcing, and account lockout attacks.
+
+### Why is this required?
+
+Brute-force hacking is still a common tool among malicious users.  Many users still use passwords that are relatively simple to guess because they use dictionary words, are too short, or use other common password techniques.  Anti-automation practices make it unfeasible for malicious users to attempt brute-force attacks by locking accounts, slowing down the requests, or disabling requests completely.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that have a login feature.
+
+### Guidelines for developers
+
+Accounts must lock after a predetermined number of failed attempts (typically five).  Frequent requests must be throttled to prevent a malicious user from making a large number of guesses.

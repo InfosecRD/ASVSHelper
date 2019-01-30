@@ -1,0 +1,13 @@
+## v7.12 - Personally Identifiable Information should be stored encrypted at rest and ensure that communication goes via protected channels.
+
+### Why is this required?
+
+No matter how secure a database is, it can always be breached.  By encrypting personal data at rest, it is less likely that a breach of the database would result in a breach of the data itself.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Identify and create encryption schema for all PII.  If third-party is used to store PII, ensure that security interfaces are set up properly and that all information is properly encrypted in transit.

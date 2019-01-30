@@ -1,0 +1,13 @@
+## v4.1 - Verify that the principle of least privilege exists - users should only be able to access functions, data files, URLs, controllers, services, and other resources, for which they possess specific authorization. This implies protection against spoofing and elevation of privilege
+
+### Why is this required?
+
+Elevation of privilege is a part of the standard threat model that entails a legitimate user attempting to access specific functionality to which they are not supposed to have access.  For example, if a user attempts to gain administrative access when they are onloy supposed to have user access.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Understand the permissions and ensure that each non-public page checks user privilege against permissions.

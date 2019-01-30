@@ -1,0 +1,15 @@
+## v4.15 - Verify the application has additional authorization (such as step up or adaptive authentication) for lower value systems, and/or segregation of duties for high value applications to enforce anti-fraud controls as per the risk of application and past fraud.
+
+### Why is this required?
+
+Step-up authentication can be thought of as a type of two-factor authentication that does not require a user to provide a second factor until they are attempting to access higher-value data.  For example, you might access a web service using only a password, but if you try to perform a high-value task, you would be sent an SMS message to authorize the transaction.
+
+The purpose of this is to protect high-value transactions with two-factor authentication while making the overall experience as user-friendly as possible.
+
+### Applicability (Level 2)
+
+This objective applies to all apps that have high-value assets.
+
+### Guidelines for developers
+
+TODO

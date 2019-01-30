@@ -1,0 +1,13 @@
+## v4.16 - Verify that the application correctly enforces context-sensitive authorisation so as to not allow unauthorised manipulation by means of parameter tampering.
+
+### Why is this required?
+
+Parameter tampering occurs when a malicious user on the client side is able to alter parameters stored on the client side.  For example, if an online store stores price information on the client side, then it is possible for a malicious user to alter the HTML code to reduce the price of the item.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+All parameters received from the client side must be validated on the server side, even if the parameter is not supplied directly by the user.

@@ -1,0 +1,11 @@
+## v7.14 - Verify that all keys and passwords are replaceable, and are generated or replaced at installation time.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

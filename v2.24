@@ -1,0 +1,17 @@
+## v2.24 - Verify that if shared knowledge based questions (also known as "secret questions") are required, the questions do not violate privacy laws and are sufficiently strong to protect accounts from malicious recovery.
+
+### Why is this required?
+
+Secret questions (e.g., "What is your mother's maiden name?") are important for recovering passwords because they allow users to authenticate if a password is lost or forgotten.  It is a bit of a balance, though, as secret questions must be sufficiently personal that nobody other than the user is likely to know the answer, but not so personal that the information supplied by the user would force them to disclose private and/or sensitive information.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Password recovery features must never send existing passwords to users, since passwords must never be stored in a recoverable format.
+
+### Further information
+
+Refer to the [OWASP Guide](https://www.owasp.org/index.php/Choosing_and_Using_Security_Questions_Cheat_Sheet) for additional information on creating password reset policies.

@@ -1,0 +1,13 @@
+## v1.10 - Verify that there is no sensitive business logic, secret keys or other proprietary information in client side code.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+During design, client side code should never include any sensitive information.  Treat all code as though it can be edited freely by a malicious user.  Secret keys should be stored in a vault and only accessible via whitelisted IP addresses.

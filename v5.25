@@ -1,0 +1,13 @@
+## v5.25 - Verify when parsing JSON in browsers, that JSON.parse is used to parse JSON on the client. Do not use eval() to parse JSON on the client.
+
+### Why is this required?
+
+Using `eval()` to parse JSON is very unsafe, as the `eval()` function can potentially execute harmful script.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+All instances of eval() used to parse JSON data must be updated.

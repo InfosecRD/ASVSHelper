@@ -1,0 +1,13 @@
+## v4.14 - Verify the system can protect against aggregate or continuous access of secured functions, resources, or data. For example, consider the use of a resource governor to limit the number of edits per hour or to prevent the entire database from being scraped by an individual user.
+
+### Why is this required?
+
+Brute-force hacking is still a common hacking method because computers are capable of making several thousand or million attempts per second.  The best defense against this is to rate-limit attempts to access a function.  If a delay of, for example, 200 milliseconds is added to each request, then this will not be noticeable to a legitimate user but will cripple the capability of a malicious user to brute-force hack a system.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Create rate-limiting functionality within all non-public resources, especially those that contain private customer information.

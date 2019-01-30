@@ -1,0 +1,13 @@
+## v5.11 - Verify that the application is not susceptible to LDAP Injection, or that security controls prevent LDAP Injection.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Escape all special characters that come from user input, especially if they are to be entered into a database as a query.

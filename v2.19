@@ -1,0 +1,13 @@
+## v2.19 - Verify there are no default passwords in use for the application framework or any components used by the application (such as “admin/password”).
+
+### Why is this required?
+
+Many application services come with default admin accounts that have standard passwords such as "admin" or "password."  Malicious users know this, and will often attempt to gain administrator access to web services by attempting these standard combinations.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that use a framework account that will be used by multiple users.
+
+### Guidelines for developers
+
+Whenever a new service is being used, check whether there are any standard accounts set up by default.  If there are, either delete the accounts or change the password.  The passwords should be cryptographically hard and avoid using dictionary words, even ones that are obscured with strings (e.g., "A11$+a+3")

@@ -1,0 +1,33 @@
+## v5.1 - Verify that the runtime environment is not susceptible to buffer overflows, or that security controls prevent buffer overflows.
+
+### Why is this required?
+
+Malicious users could possibly execute code with elevated privileges.
+
+By submitting a specially crafted payload, an attacker can write past the normal boundaries of an input buffer and possibly overwrite system registers that contain pointers to the next instruction to execute.  If an attacker can successfully manipulate the instruction pointer, then it may be possible to direct execution flow back into the input buffer which can contain code written by the attacker.
+
+The usual targets for buffer overflow attacks are programs that run as an administrative user rather than as the user that executes the program.  If an attacker can get his code to run in this context, then he can elevate his level of privileges.
+
+### Applicability (Level 1)
+
+This objective applies to all locally executable applications.
+
+### Guidelines for developers
+
+There are several techniques that are usually implemented by default for most modern compiled applications.
+These include:
+  - ASLR: Address Space Layout Randomization
+  
+    This is a technique automatically added by most modern compilers to randomize the layout of allocated memory in order to make it more difficult to guess where in memory an attacker's code might live.
+
+  - Non executable stack
+  
+    The attack can be neutralized by preventing input buffers from being executable.
+
+  - [Canaries](https://en.wikipedia.org/wiki/Buffer_overflow_protection#Canaries)
+  
+    The compiler may automatically add code to your application which will create random values between allocated buffers, and will assert that those values have not been altered before executing a return from all function calls.
+
+**As a developer, you should not rely solely on these safeguards.**
+
+The primary way to defend against buffer overflow attacks is to ensure that any user supplied input is validated to be in an expected format (including length).

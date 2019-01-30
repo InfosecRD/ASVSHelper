@@ -1,0 +1,13 @@
+## v5.17 - Verify that the application has defenses against HTTP parameter pollution attacks, particularly if the application framework makes no distinction about the source of request parameters (GET, POST, cookies, headers, environment, etc.)
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Test for multiple parameter definitions and reject requests that set the same parameter multiple times.  Sanitize all inputs.

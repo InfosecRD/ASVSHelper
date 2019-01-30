@@ -1,0 +1,13 @@
+## v5.6 - Verify that a single input validation control is used by the application for each type of data that is accepted.
+
+### Why is this required?
+
+Maintaining configuration control of a complex application can be difficult if the rules are not uniform, and if validation rules are not uniform, then it can be frustrating for a user.  If an app has multiple locations in which a user might enter, for example, a first name, then all of the validation rules for all of the different first name fields must be the same.  This means that if one first name field limits a user to 32 characters, then all of the first name fields in the app must limit the user to 32 characters.
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+All validation rules should be maintained in one centralized location.

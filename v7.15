@@ -1,0 +1,11 @@
+## v7.15 - Verify that random numbers are created with proper entropy even when the application is under heavy load, or that the application degrades gracefully in such circumstances.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers

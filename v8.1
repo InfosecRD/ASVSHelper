@@ -1,0 +1,13 @@
+## v8.1 - Verify that the application does not output error messages or stack traces containing sensitive data that could assist an attacker, including session id, software/framework versions and personal information
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Whenever there is an error in the application, the back end must always generate a generic error message that does not send to the front end any information about what occurred.  The detailed information, including the stack trace, is stored in the log file but is never visible to the user.

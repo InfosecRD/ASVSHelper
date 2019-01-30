@@ -1,0 +1,27 @@
+## v1.6 - Verify that a threat model for the target application has been produced and covers off risks associated with Spoofing, Tampering, Repudiation, Information Disclosure, and Elevation of privilege (STRIDE).
+
+### Why is this required?
+
+The concept of threat modeling exists to identify threats to a system.  This is an important step to understand how to develop secure applications from the ground up as opposed to having to incorporate security after the fact.
+
+#### The STRIDE Model
+
+**Spoofing** -- Spoofing occurs when a malicious user is able to masquerade as a different user, thereby gaining privileges that belong to someone other than themselves.  The most common sources of spoofing attacks are 1) a failure of the system to properly authenticate users, and 2) disclosure or breach of a user's password.
+
+**Tampering** -- Tampering occurs when a malicious user is able to alter data that they do not have permission to alter.
+
+**Repudiation** -- Repudiation means the ability of an individula to deny that they caused an event to happen.
+
+**Information Disclosure** -- Information disclosure occurs when confidential data is made accessible to people who are either not a part of the organization (e.g. a malicious attacker) or to someone who is a member of the organization but whose privileges do not or should not include access to the data.
+
+**Denial of Service** -- Denial of service (DoS) occurs when either a malicious user or a coding error causes authorized users to be unable to access information.  A DoS attack will often involve demanding more resources of a system than it is capable of providing, which results in either a slowdown or even a shutdown of the system's ability to function.  A DoS can also occur when a coding error causes a slowdown or shutdown, such as when memory is not handled properly and causes an overflow.
+
+**Elevation of Privilege** -- When a user elevates privilege, they are attempting to access resources or capabilities to which they should not have access.  This can often entail a user who has some privileges (i.e., Read-Only) being able to obtain additional privileges to include administrative privileges.
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+At the beginning of every sprint, all developers working on stories should participate in a threat modeling meeting in which potential threats are brainstormed and mitigation plans are devised.

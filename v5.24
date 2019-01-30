@@ -1,0 +1,11 @@
+## v5.24 - Verify that data transferred from one DOM context to another, uses safe JavaScript methods, such as using .innerText and .val.
+
+### Why is this required?
+
+Usage of unsafe methods such as .innerHTML can leave a page susceptible to cross-site scripting (XSS) attacks.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

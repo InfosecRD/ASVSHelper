@@ -1,0 +1,13 @@
+## v3.17 - Verify that an active session list is displayed in the account profile or similar of each user. The user should be able to terminate any active session.
+
+### Why is this required?
+
+If a malicious user is attempting to hijack a session, this information would appear in the session list and a legitimate user would be alerted to the fact.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that handle sessions.
+
+### Guidelines for developers
+
+Ensure that the active session list is easy for a user to find.

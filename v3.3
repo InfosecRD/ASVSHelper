@@ -1,0 +1,13 @@
+## v3.3 - Verify that sessions timeout after a specified period of inactivity.
+
+### Why is this required?
+
+Open sessions are potentially vulnerable to attacks such as session hijacking.  If an account is inactive for a certain amount of time, then it is likely that the user accidentally left their browser or app open but never logged out.  The purpose of timing out sessions is to minimize the ability of malicious users to hijack sessions by decreasing the number of sessions that are open at any one point.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that maintain user sessions.
+
+### Guidelines for developers
+
+Each page load must check to make sure the session is still active.  It will also be a task for the development team and/or the architect to maintain configuration control of the timeout rules.  Typically, a timeout limit of approximately fifteen minutes of inactivity is appropriate, but will depend on the unique features of the app.  A longer timeout may be warranted if longer periods of inactivity are expected (i.e., the user might spend time reading a large amount of text).

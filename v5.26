@@ -1,0 +1,11 @@
+## v5.26 - Verify that authenticated data is cleared from client storage, such as the browser DOM, after the session is terminated.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

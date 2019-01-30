@@ -1,0 +1,13 @@
+## v2.8 - Verify all account identity authentication functions (such as update profile, forgot password, disabled / lost token, help desk or IVR) that might regain access to the account are at least as resistant to attack as the primary authentication mechanism.
+
+### Why is this required?
+
+Many malicious users are able to bypass password-protected login pages by using password recovery or other similar features that often do not have adequate security features implemented.  Identity authentication is only as secure as its least secure component, and many identity authentication mechanisms are overlooked.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that include multiple identity authentication functions.
+
+### Guidelines for developers
+
+All authentication services must be handled via third-party apps such as Auth0.

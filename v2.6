@@ -1,0 +1,13 @@
+## v2.6 - Verify all authentication controls fail securely to ensure attackers cannot log in.
+
+### Why is this required?
+
+If there is a flaw in the code or if there is a server error, then it is possible for a malicious user to exploit this to gain unauthorized access.  Also, if authentication does not fail securely, then a malicious user could attempt to generate an internal error to gain unauthorized access.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that include login functionality.
+
+### Guidelines for developers
+
+Make sure all controls have been validated by third-party authentication before permitting access to any non-public page.  If a control or token is rejected, then the app should not return any error messages except to say that authentication failed.

@@ -1,0 +1,15 @@
+## v2.26 - Verify that risk based re-authentication, two factor or transaction signing is in place for high value transactions.
+
+### Why is this required?
+
+Two-factor authentication entails requiring a user to identify themselves using two of the following three authentication factors: something they know, something they have, and something they are.  An example would be if a user, to log in, must use their fingerprint (something they are), then enter a password (something they know).
+
+The purpose of this requirement is to thwart malicious users who may have access to one of the factors.  For example, if a malicious user is able to compromise a user's password, the password is useless to them unless they also are able to compromise the additional factor.  For example, if a login requires both a password and a response to an SMS text, then a malicious user still cannot log in unless they both compromise a user's password *and* access their phone.
+
+### Applicability (Level 2)
+
+This objective applies to apps that will entail access to high-value resources.
+
+### Guidelines for developers
+
+It will be the role of developers and/or a system architect to determine which resources should be considered high-value.  At a minimum, any administrator account that has access to personally identifiable information (PII) or payment card information (PCI) must be considered high-value.

@@ -1,0 +1,13 @@
+## v2.29 - Verify that secrets, API keys, and passwords are not included in the source code, or online source code repositories.
+
+### Why is this required?
+
+Many breaches have occurred because of keys that were stored in online repositories such as GitHub.  In one example, a hacker accessed the Uber database by finding login credentials that had ben uploaded onto Uber's GitHub.
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Keys must be stored in a protected vault.  Do not store keys in `.properties` files, because they can be compromised as well as code can, especially if they are stored in online repositories such as GitHub.

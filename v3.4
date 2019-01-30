@@ -1,0 +1,13 @@
+## v3.4 - Verify that sessions timeout after an administratively-configurable maximum time period regardless of activity (an absolute timeout).
+
+### Why is this required?
+
+Open sessions are potentially vulnerable to attacks such as session hijacking. If an account is inactive for a certain amount of time, then it is likely that the user accidentally left their browser or app open but never logged out. The purpose of timing out sessions is to minimize the ability of malicious users to hijack sessions by decreasing the number of sessions that are open at any one point.
+
+### Applicability (Level 2)
+
+This objective applies to all apps that maintaiin user sessions.
+
+### Guidelines for developers
+
+Development team will need to establish maximum timeout rules.  The length of time will be dependent on the nature of the app.  Configuration control will need to be established with any thrid-party session management app.

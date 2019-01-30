@@ -1,0 +1,15 @@
+## v2.23 - Verify that account lockout is divided into soft and hard lock status, and these are not mutually exclusive. If an account is temporarily soft locked out due to a brute force attack, this should not reset the hard lock status.
+
+### Why is this required?
+
+This is a bit of a difficult requirement to understand at first.  What it means is that it should not be possible to cancel a lockout by causing another lockout.  If an account is "hard locked" (meaning that it is locked for an indefinite amount of time until an administrator unlocks it) then it should not be possible to undo the hard lockout by causing the account to be "soft locked" (meaning the account is locked for a predetermined length of time, such as 15 minutes).
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+The "hard lock" and "soft lock" statuses of an account must be stored separately.  For example, an account status must not be stored in one variable that can be set to `status='unlocked'`, `status='hard_locked'`, or `status='soft_locked'`.  If the status were to be stored in this fashion, then setting the status to "soft_locked" would delete any record of the status being hard locked.
+
+Instead, each lock status should be stored separately such as `hard_lock=false` and `soft_lock=false`.  This way, setting the soft_lock variable to true would not alter the hard lock status.

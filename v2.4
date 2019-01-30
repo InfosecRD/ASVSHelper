@@ -1,0 +1,13 @@
+## v2.4 - Verify all authentication controls are enforced on the server side.
+
+### Why is this required?
+
+Any authentication controls enforced on the client side can be defeated by a malicious user.  It is very easy for a client to alter any HTML or JavaScript code to override authentication controls.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+All authentication services must be handled via third-party apps such as Auth0.

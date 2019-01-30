@@ -1,0 +1,13 @@
+## v3.1 - Verify that there is no custom session manager, or that the custom session manager is resistant against all common session management attacks.
+
+### Why is this required?
+
+Session management attacks are a common entry point for malicious users.  Custom session managers can be vulnerable because they have not been tested repeatedly against the most common forms of attack and improved over time.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that track user sessions.
+
+### Guidelines for developers
+
+Only approved and industry standard session management tools must be used.

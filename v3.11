@@ -1,0 +1,13 @@
+## v3.11 - Verify that session ids are sufficiently long, random and unique across the correct active session base.
+
+### Why is this required?
+
+Using weak random-number generators can be a vulnerability because it is possible for malicious users to reverse-engineer many pseudorandom number generators.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that require user sessions.
+
+### Guidelines for developers
+
+Third-party session managers must be used.

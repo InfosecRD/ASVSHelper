@@ -1,0 +1,15 @@
+## v2.27 - Verify that measures are in place to block the use of commonly chosen passwords and weak passphrases.
+
+### Why is this required?
+
+A large percentage of users still use easily-guessed passwords (e.g., "qwerty123" or "Th1$isa$ecre+") without realizing that they are doing it.  No matter how strong an organization's security policies, a user's account will never be more secure than the security of their password.  By enforcing policies that block the use of easily-guessed passwords, organizations can better protect users from brute-force guessing attacks from a malicious user.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that require password authentication.
+
+### Guidelines for developers
+
+Third-party apps must be used for authentication.  It will be necessary to work with the third-party vendors to determine the best way to implement password check features.
+
+Also, front-end developers should incorporate UI that will warn users if their passwords are insufficient.  Strenght bars are a good example of an implementation of this.

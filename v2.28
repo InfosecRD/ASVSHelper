@@ -1,0 +1,13 @@
+## v2.28 - Verify that all authentication challenges, whether successful or failed, should respond in the same average response time.
+
+### Why is this required?
+
+Even if a generic message is returned to a user in the event of a login failure, it is still possible for a malicious user to enumerate accounts by measuring the response times of login attempts.  For example, a malicious user might notice that most responses to invalid logins take 30-40 milliseconds, but every so often, a response will take 500 milliseconds.  The attacker knows that the additional time is incurred because the username was found in the database and it required additional processing time to check whether the password matched the username.
+
+### Applicability (Level 3)
+
+This objective applies to all apps that require login validation.
+
+### Guidelines for developers
+
+The code must be set up so that all responses are sent in a statistically equivalent amount of time (i.e., via a t-test).  This should ideally be handled by a third-party authentication service.  A common method of doing this is to introduce a delay in the response time that ensures that all responses take a certain minimum amount of time.

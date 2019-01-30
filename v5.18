@@ -1,0 +1,15 @@
+## v5.18 - Verify that client side validation is used as a second line of defense, in addition to server side validation.
+
+### Why is this required?
+
+Although client-side validation should never be considered secure, because users will always be able to manipulate any client-side validation routines, it is nonetheless still important.  Validation on the client side will make apps more user friendly by ensuring that all legitimate attempts by the user to input information will be accepted.  Plus, it will reduce load on the server by minimizing invalid requests.
+
+Also, since invalid request attempts are logged, and these logs can be used to audit attempts by malicious users to defeat the security of the system, minimizing the number of invalid requests that come from legitimate users will make auditing the logs easier to do.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Validation rules must be the same as what is used on server side.  Rules should be accessed real-time from the server to ensure configuration control.

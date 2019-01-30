@@ -1,0 +1,13 @@
+## v5.5 - Verify that input validation routines are enforced on the server side.
+
+### Why is this required?
+
+Any input validation rules enforced on the client side can be manipulated by the user, even if the rules exist in a compiled application.  Therefore, client-side validation should be considered as a UX feature only.  Once input is received from a client, it must be considered untrusted and validated upon receipt before it is used.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Any validation rules performed on the client side should be retrieved first from the server to ensure proper configuration management.  However, any validation rules enforced on the client side are insecure and should be treated only as UX enhancements.  All input must be validated and sanitized on the server side before being accepted.

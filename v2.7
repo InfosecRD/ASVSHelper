@@ -1,0 +1,15 @@
+## v2.7 - Verify password entry fields allow, or encourage, the use of passphrases, and do not prevent password managers, long passphrases or highly complex passwords being entered.
+
+### Why is this required?
+
+Password managers can encourage users to generate unguessable passwords consisting of hard-to-remember random strings consisting of many characters.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that store passwords.
+
+### Guidelines for developers
+
+Front-end developers should include password rules on the page and ensure that the rules are clear and easy to understand.  Password strength bars are encouraged.
+
+Back-end developers must validate all passwords on the server side.  Validation includes checking for dictionary words.  Requiring minimum password strength encouraged.  Do not limit length of passwords to anything less than an amount necessary to prevent buffer overflow or similar attacks (i.e. on the order of one kilobyte).  Passwords of as many as 32 or more characters should not only be permitted, but encouraged.

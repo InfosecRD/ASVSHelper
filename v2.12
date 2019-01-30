@@ -1,0 +1,13 @@
+## v2.12 - Verify that all authentication decisions can be logged, without storing sensitive session identifiers or passwords. This should include requests with relevant metadata needed for security investigations.
+
+### Why is this required?
+
+Logging is essential for being able to investigate after-the-fact any attempts by malicious users to brute-force a user account.  However, it is important not to store sensitive data in any logs because that gives attackers an additional entry point for accessing sensitive information.  In addition, storing passwords in a log is especially susceptible to attack since passwords must never be stored anywhere unless they are securely hashed.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Before logging any user input, scrub the input and escape any special characters.

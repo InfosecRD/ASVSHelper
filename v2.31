@@ -1,0 +1,31 @@
+## v2.31 - Verify that if an application allows users to authenticate, they can authenticate using two-factor authentication or other strong authentication, or any similar scheme that provides protection against username + password disclosure.
+
+### Why is this required?
+
+There are three "factors" that can be used to authenticate a user.  These three factors are:
+
+- Something a user knows (password, mother's maiden name, phone number, etc.)
+
+- Something a user has (device, key, RSA card, etc.)
+
+- Something a user is (fingerprint, geofencing, retinal scan, etc.)
+
+Single-factor authentication means that only one of these three factors is used to authenticate.  For example, if a user needs only to enter a username and password to log in to a service, then the only factor being used is "something a user knows."
+
+Two-factor authentication means that two of the three factors are used.  For example, if a user needs to enter an electronic key into a USB port, then enter a password, then two factors are being used.  The user has the electronic key and knows the password.
+
+Note that this means that if, for example, a user must enter a password, then answer a security challenge question, that this is not considered two-factor authentication, because both the password and the security answer are the same factor, something the user knows.  The two factors used to authenticate must be different.
+
+### Applicability (Level 2)
+
+This objective applies to all apps that include user authentication.
+
+### Guidelines for developers
+
+Common methods of user-friendly two-factor authentication methods include, but are not limited to:
+
+- Enabling fingerprint scanners on mobile devices (something user has (device) + something user is (fingerprint))
+
+- Send an SMS with a code whenever the user attempts to authenticate (something user has (phone) + something user knows (password))
+
+- Requiring a password but only permitting access from specific geographic locations (something the user knows (password) + something the user is (geofencing))

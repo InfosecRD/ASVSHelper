@@ -1,0 +1,17 @@
+## v7.6 - Verify that all random numbers, random file names, random GUIDs, and random strings are generated using the cryptographic module’s approved random number generator when these random values are intended to be not guessable by an attacker.
+
+### Why is this required?
+
+Creating a pseudorandom number generator (PRNG) is a tricky business, since computers are incapable of generating true randomness.  They generate pseudorandom numbers by starting with a seed, then applying a mathematical function to determine an output, then using that output as a seed to produce the next output, and so on.  The difficulty comes from generating a seed that is sufficiently random that it cannot be guessed by a malicious user.
+
+Most PRNGs use the computer's internal clock to generate a random seed.  This is perfectly acceptable for most applications where security is not required (e.g., selecting a random trivia question to produce in a trivia game), but if the PRNG is used to generate a random password, then a malicious user need only generate passwords using random guesses based on iterating through possible seeds.  Therefore, even if the generated password is unguessable, a smart attacker would be able to narrow the possibilities down to a manageable number by exploiting the weakness of an insecure PRNG.
+
+![xkcd](https://imgs.xkcd.com/comics/random_number.png)
+
+### Applicability (Level 2)
+
+This objective applies to all apps that require the use of randomly generated passwords, API keys, or other secure random strings or numbers.
+
+### Guidelines for developers
+
+Always use functions such as Java's SecureRandom to generate random numbers that are used for security purposes.  Never trust standard radom number generators to be secure.

@@ -1,0 +1,15 @@
+## v4.13 - Verify that the application or framework uses strong random anti-CSRF tokens or has another transaction protection mechanism.
+
+### Why is this required?
+
+Cross-site request forgery (CSRF) occurs when a user is tricked into permitting a malicious user have access to their valid session.  This can occur when a user is tricked into sending a request to a server, often via a link in a phishing e-mail.  If a link contains a GET request, then if the user clicks on the link, then the GET request will be passed with the user's valid credentials.
+
+A good resource for learning about Cross-Site Request Forgery can be found [here](https://www.hacksplaining.com/exercises/csrf)
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Insert randomly-generated CSRF tokens into any web forms.  Never use GET request with any form that uses CSRF tokens.  The back end must never accept inputs using incorrect or missing CSRF tokens.

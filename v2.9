@@ -1,0 +1,17 @@
+## v2.9 - Verify that the changing password functionality includes the old password, the new password, and a password confirmation.
+
+### Why is this required?
+
+If a malicious user is able to access a user's account for any reason (i.e., the legitimate user leaves their computer unattended), then the malicious user can compromise the account by attempting to change the password, then logging in from a separate computer.  Requiring the old password to be used to change to a new password will prevent this sort of attack.
+
+Also, the use of a password confirmation field ensures that the user has not made a typographical error when entering the password, which would lock them out of their account.
+
+### Applicability (Level 1)
+
+This objective applies to all apps that include a change password feature.
+
+### Guidelines for developers
+
+Front-end developers should disable copy/pasting into the password or password confirmation fields.  If a user makes a typographical error in one of these fields, then copy/pastes that error into the other password field, then they will be locked out of their account.
+
+Back-end developers must authenticate the old password before accepting the new password.  Since third-party apps must be used for authentication, this means that the old password must be validated with the third-party app before the new password is ever sent to the third-party app.  If the old password fails to validate, then the new password is never sent to the third-party app and a generic error message must be sent to the user informing them that the change was not made.

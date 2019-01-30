@@ -1,0 +1,15 @@
+## v1.11 - Verify that all application components, libraries, modules, frameworks, platform, and operating systems are free from known vulnerabilities
+
+### Why is this required?
+
+No modern application is developed completely in-house.  Every application will require the use of external libraries, etc. that have been developed and modified over the years by countless numbers of individuals worldwide.  These libraries are useful and their use can greatly simplify app development.  
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Imported third-party components should be researched before implementation and checked during threat modeling.  Never copy/paste code from the internet without first inspecting the code for known vulnerabilities.  Be sure that all third-party DevOps tools are appropriate, industry standard, and are implemented correctly.  Ensure components are scanned through Agent Smith.
+
+Also, maintain configuration control of all third-party components and ensure that they are kept up to date and all patches properly installed.
