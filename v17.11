@@ -1,0 +1,11 @@
+## v17.11 - Verify that the app validates input to exported activities, intents, or content providers.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers

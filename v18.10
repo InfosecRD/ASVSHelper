@@ -1,0 +1,11 @@
+## v18.10 - Verify that alternative and less secure access paths do not exist.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

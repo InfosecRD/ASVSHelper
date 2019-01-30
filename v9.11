@@ -1,0 +1,13 @@
+## v9.11 - Verify that sensitive data is rapidly sanitized from memory as soon as it is no longer needed and handled in accordance to functions and techniques supported by the framework/library/operating system.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps in which clients will enter sensitiive information into their app or browser.
+
+### Guidelines for developers
+
+All sensitive data entered into forms must be sanitized from the client side as soon as the form is submitted.  Ideally, the data should be overwritten with zeros or random bits.

@@ -1,0 +1,13 @@
+## v9.1 - Verify that all forms containing sensitive information have disabled client side caching, including autocomplete features.
+
+### Why is this required?
+
+Cached data is stored unencrypted on the client side.  For most pages in applications, this is a helpful feature for the user  because it allows their browser to pre-fill forms to save time.  However, if the form or page contains sensitive information such as payment card information (PCI), then it can cause a security risk because the client does not know that their sensitive information is stored locally.  If their device should ever become compromised, then the sensitive information would be easy for a malicious user to access.
+
+### Applicability (Level 1)
+
+This objective applies to all apps in which highly sensitive information will be displayed.
+
+### Guidelines for developers
+
+Ensure that autocomplete is disabled on the browser if the page contains sensitive information.  This can be done by setting `autocomplete="off"` in the form input field.  This should be set, at a minimum, on fields containing passwords, e-mail addresses, phone numbers, and credit card information.

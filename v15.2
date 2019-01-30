@@ -1,0 +1,13 @@
+## v15.2 - Verify the application has business limits and correctly enforces on a per user basis, with configurable alerting and automated reactions to automated or unusual attack.
+
+### Why is this required?
+
+The purpose of rate-limiting is to prevent automation without impacting legitimate users who are performing actions in normal human-time.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Enforce rate-limiting on all sensitive pages and log any attempts to exceed the rate-limiting.  Be sure that not every attempt is logged individually but that all attempts are grouped together in one log item to prevent overflow of logs.

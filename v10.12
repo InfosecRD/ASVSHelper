@@ -1,0 +1,11 @@
+## v10.12 - Verify that production website URL has been submitted to preloaded list of Strict Transport Security domains maintained by web browser vendors. Please see the references below.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers

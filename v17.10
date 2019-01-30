@@ -1,0 +1,11 @@
+## v17.10 - Verify that sensitive information maintained in memory is overwritten with zeros as soon as it no longer required, to mitigate memory dumping attacks.
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

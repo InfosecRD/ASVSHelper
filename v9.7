@@ -1,0 +1,13 @@
+## v9.7 - Verify the application minimizes the number of parameters in a request, such as hidden fields, Ajax variables, cookies and header values.
+
+### Why is this required?
+
+Fields that are hidden attribute are only hidden from normal display, but are revealed if the user either views the page source or performs an inspect on the HTML code.  Therefore, hidden attributes are not truly hidden and must therefore be considered insecure.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Hidden fields are never secure and must never be used to pass sensitive or important data from a form.  Validate all input in parameters.  Input from hidden fields must never be trusted.

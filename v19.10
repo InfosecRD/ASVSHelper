@@ -1,0 +1,13 @@
+## v19.10 - Verify that all application assets are hosted by the application, such as JavaScript libraries, CSS stylesheets and web fonts are hosted by the application rather than rely on a CDN or external provider.
+
+### Why is this required?
+
+If a third-party asset relies on an external provider, then there is no guarantee that the code will remain static.  A code update could introduce a vulnerability, a malicious user could access and alter the external code, the connection could break down, etc.  The most secure method of using third-party code is to download it and execute it locally.
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Ensure all third-party assets are downloaded and stored locally.  Periodically monitor the code source to ensure that any security updates are downloaded and installed.

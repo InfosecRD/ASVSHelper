@@ -1,0 +1,13 @@
+## v16.6 - Verify that files obtained from untrusted sources are stored outside the webroot, with limited permissions, preferably with strong validation.
+
+### Why is this required?
+
+Even with anti-virus scanning, it is always possible for an untrusted file to contain malicious content that is not caught during scanning (i.e., a zero-day attack).
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Create sandbox for storage of external files.

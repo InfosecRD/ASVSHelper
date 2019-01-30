@@ -1,0 +1,13 @@
+## v9.3 - Verify that all sensitive data is sent to the server in the HTTP message body or headers (i.e., URL parameters are never used to send sensitive data).
+
+### Why is this required?
+
+GET requests store the request variables in the URL, which is not encrypted during transport.  Therefore, if sensitive information is stored in the URL (i.e., `https://www.example.com/login?username=asvs&password=A11$tate`) any man-in-the-middle would be able to intercept the request and read the information contained in the variables.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Any request made that includes sensitive data must never be part of a GET request.  Always use POST for requests containing sensitive data.

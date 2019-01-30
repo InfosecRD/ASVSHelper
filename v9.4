@@ -1,0 +1,37 @@
+## v9.4 - Verify that the application sets appropriate anti-caching headers as per the risk of the application, such as the following:
+
+```
+Expires: Tue, 03 Jul 2001 06:00:00 GMT
+Last-Modified: {now} GMT
+Cache-Control: no-store, no-cache, must-revalidate, max-age=0
+Cache-Control: post-check=0, pre-check=0
+Pragma: no-cache
+```
+
+### Why is this required?
+
+Many resources will need to have anti-caching settings if they contain sensitive information.  If a resource is to have anti-caching set up, then the headers will need to be established so that they prevent caching.  Although many of the headers listed are redundant in practice, they require little effort to generate and can provide additional layers of security.
+
+**Expires:** This header informs the broswer when it is no longer acceeptable to retrieve a cached version of a resource and must instead load the newest version from the server.  For pages that contain potentially sensitive information, the ```Expires:``` header should be set to the current time or at a time in the past (as seen in the example above).  By doing this, the browser will treat the page as though it is already expired and not store it in the cache.
+
+**Last-Modified:** This should always be set to the current time.  This header tells the browser when the most current version of the resource was created or modified.  By always setting it to the current time, regardless of when the resource was actually modified, it will force the browser to download from the server.
+
+**Cache-Control:**
+
+*no-store:* This header setting specifically tells the browser never to store a cached version of the page.
+
+*no-cache:* Although this sounds redundant to ```no-store```, the ```no-cache``` setting does not prevent the browser from caching the page.  It will tell the browser to check with the server each time the resource is loaded.  Therefore, it must be used in tandem with ```no-store```.
+
+*must-revalidate:* This tells the browser that it must revalidate with the server whenever a cached copy of the resource is considered "stale."
+
+*pre-check & post-check:* These are mostly deprecated but may still be used in some older browsers.  These checks are similar to the ```max-age``` header and will tell older browsers information about when to check a resource for freshness.  The ```pre-check``` value determines the amount of time in seconds after which the browser must check for freshness before showing the resource.  The ```post-check``` value will determine the amount of time in seconds after which any new attempt to access the resource must result in a check.
+
+*max-age:* This setting tells the browser that the page is "stale" immediately upon receipt.
+
+*Pragma:* This is deprecated but will be required for older browsers using HTTP/1.0
+
+### Applicability (Level 1)
+
+This objective applies to all resources that are considered sensitive and that should never be stored unencrypted.
+
+### Guidelines for developers

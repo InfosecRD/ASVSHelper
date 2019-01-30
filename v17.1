@@ -1,0 +1,13 @@
+## v17.1 - Verify that ID values stored on the device and retrievable by other applications, such as the UDID or IMEI number are not used as authentication tokens.
+
+### Why is this required?
+
+ID values of the device are essentially user input, and must be treated as such.  It is possible for a malicious user to alter the ID of the device to masquerade as a different device.
+
+### Applicability (Level 1)
+
+This objective applies to mobile apps that use device ID data.
+
+### Guidelines for developers
+
+ID values from the device flor UX purposes may be used but must always be considered untrusted, since they can be spoofed by malicious users.

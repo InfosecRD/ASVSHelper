@@ -1,0 +1,13 @@
+## v10.11 - Verify that HTTP Strict Transport Security headers are included on all requests and for all subdomains, such as `Strict-Transport-Security: max-age=15724800; includeSubdomains`
+
+### Why is this required?
+
+TODO
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Include security line in all headers accessing secure pages.

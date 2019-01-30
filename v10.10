@@ -1,0 +1,11 @@
+## v10.10 - Verify that TLS certificate public key pinning is implemented with production and backup public keys. For more information, please see the references below.
+
+### Why is this required?
+
+Public key pinning is a method of preventing the use of fraudulent digital certificates.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers

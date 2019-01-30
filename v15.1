@@ -1,0 +1,13 @@
+## v15.1 - Verify the application will only process business logic flows in sequential step order, with all steps being processed in realistic human time, and not process out of order, skipped steps, process steps from another user, or too quickly submitted transactions.
+
+### Why is this required?
+
+This requirement is intended to prevent automated scraping of data from the app.
+
+### Applicability (Level 2)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Enforce rate-limiting rules within a logical sequence to prevent automated scraping.

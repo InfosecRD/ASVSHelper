@@ -1,0 +1,11 @@
+## v10.1 - Verify that a path can be built from a trusted CA to each Transport Layer Security (TLS) server certificate, and that each server certificate is valid.
+
+### Why is this required?
+
+Security certificates must be signed by a trusted Certificate Authority.  Accepting untrusted certificates makes an app susceptible to Man-in-the-Middle attacks because, without the Certificate Authority signature, there is no way of distingushing between a valid source and a malicious source.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers

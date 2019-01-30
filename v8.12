@@ -1,0 +1,15 @@
+## v8.12 - Verify that the logs are stored on a different partition than the application is running with proper log rotation.
+
+### Why is this required?
+
+If a malicious user compromises an application, then the logs will be needed to perform an analysis of the malicious user's activities.  However, if the application is compromised and the log file is stored in the same location as the application, then that means that the malicious user also has the ability to alter the logs to cover any tracks, not only making analysis impossible, but possibly removing any evidence that a malicious attack occurred at all.
+
+By storing logs in a different partition, or ideally on a different server, then a malicious user who has compromised the application will not have access to the logs.
+
+### Applicability (Level 3)
+
+This objective applies to all apps.
+
+### Guidelines for developers
+
+Third-party services should be used for storing of log information.

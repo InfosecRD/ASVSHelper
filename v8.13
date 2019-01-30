@@ -1,0 +1,11 @@
+## v8.13 - Time sources should be synchronized to ensure logs have the correct time
+
+### Why is this required?
+
+One of the purposes of logging is to allow audits at a future time, which may require determining the correct order of events.  Since these events may occur within milliseconds of each other, if time sources are not well synchrnoized, then it can be impossible to determine the order of events from log information.
+
+### Applicability (Level 1)
+
+This objective applies to all apps.
+
+### Guidelines for developers
