@@ -6,7 +6,7 @@
 var reader = new XMLHttpRequest();
 
 function read(file) {
-   reader.open('GET', 'https://raw.githubusercontent.com/Ryan2Delaney2/ASVSHelper/master/' + file);
+   reader.open('GET', 'https://raw.githubusercontent.com/InfosecRD/ASVSHelper/master/' + file);
    reader.onreadystatechange = function() {
       document.getElementById('infobox').value = reader.responseText;
    }
